@@ -4,6 +4,8 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import lex.example.daggertwo.ui.BaseActivity;
+import lex.example.daggertwo.ui.BaseAdapter;
+import lex.example.daggertwo.ui.BaseFragment;
 
 /**
  * Created by lex on 2/4/15.
@@ -14,6 +16,10 @@ import lex.example.daggertwo.ui.BaseActivity;
 public interface AppGraph {
 
     void inject(BaseActivity activity);
+
+    void inject(BaseFragment fragment);
+
+    void inject(BaseAdapter adapter);
 
     public final static class Initializer {
 

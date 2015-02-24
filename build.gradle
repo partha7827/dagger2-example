@@ -12,8 +12,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots"
-        }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "https://raw.github.com/Raizlabs/maven-releases/master/releases" }
     }
 }

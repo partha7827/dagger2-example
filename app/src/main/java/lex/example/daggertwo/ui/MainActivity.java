@@ -1,11 +1,13 @@
 package lex.example.daggertwo.ui;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 import lex.example.daggertwo.R;
+import lex.example.daggertwo.data.Note;
 
 /**
  * Created by lex on 2/4/15.
@@ -18,8 +20,10 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-    }
 
+       /* Note note = new Note("dsdsd", "asasasa", String.valueOf(System.currentTimeMillis()));
+        note.insert(false);*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

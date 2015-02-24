@@ -2,6 +2,8 @@ package lex.example.daggertwo;
 
 import android.app.Application;
 
+import com.raizlabs.android.dbflow.config.FlowManager;
+
 /**
  * Created by lex on 2/4/15.
  */
@@ -15,7 +17,14 @@ public class App extends Application {
         super.onCreate();
 
         instance = this;
+        FlowManager.init(this);
         buildComponentAndInject();
+    }
+
+    @Override public void onTerminate() {
+        super.onTerminate();
+
+        FlowManager.destroy();
     }
 
     public static App getInstance() {
