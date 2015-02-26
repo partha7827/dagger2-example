@@ -12,6 +12,7 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -25,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
 }
 
 dependencies {
@@ -36,10 +41,18 @@ dependencies {
     compile 'com.raizlabs.android:DBFlow-Core:1.4.1'
     compile 'com.raizlabs.android:DBFlow:1.4.1'
 
+    debugCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
+    debugCompile 'com.google.dexmaker:dexmaker:1.0'
+    debugCompile 'org.mockito:mockito-core:1.10.17'
+
+    androidTestCompile ('com.android.support.test.espresso:espresso-core:2.0') {
+        exclude group: 'javax.inject'
+    }
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+
     apt "org.projectlombok:lombok:1.14.8"
     apt "com.google.dagger:dagger-compiler:2.0-SNAPSHOT"
     apt 'com.raizlabs.android:DBFlow-Compiler:1.4.1'
-
 
     provided 'javax.annotation:jsr250-api:1.0'
     provided 'org.projectlombok:lombok:1.14.8'

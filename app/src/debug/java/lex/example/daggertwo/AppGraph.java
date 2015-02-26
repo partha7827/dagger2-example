@@ -21,6 +21,8 @@ public interface AppGraph {
 
     void inject(BaseAdapter adapter);
 
+    //void inject(BaseActivityTest test);
+
     public final static class Initializer {
 
         public static AppGraph init(App app) {
